@@ -10,10 +10,16 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+            Button {
+                
+            } label: {
+                CustomButtonView(name: "Blackjack", background: .green)
+            }
+            .frame(width: 300, height: 50)
+            .background(.green)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .padding()
+
         }
         .padding()
     }
