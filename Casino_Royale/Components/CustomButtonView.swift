@@ -9,23 +9,33 @@ import SwiftUI
 
 struct CustomButtonView: View {
     var name: String
-    var background: Color
-    var body: some View {
-        HStack {
-            Text("🃏")
-            Text(name)
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-                .frame(width: 200, height: 50)
-                .padding()
-                .background(background)
-                .cornerRadius(20)
-        }
+        var background: Color
 
-    }
+        var body: some View {
+            HStack(spacing: 8) {
+                Image("roulette")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 64, height: 64)
+                
+                Text(name)
+                    .font(.title2)
+                    .fontWeight(.bold)
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 10)
+            .background(background)
+            .foregroundColor(.white)
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .shadow(color: .black.opacity(0.2), radius: 4, x: 0, y: 2)
+        }
 }
 
 #Preview {
-    CustomButtonView(name: "Baccart",background: .blue)
+    VStack(spacing: 20) {
+            CustomButtonView(name: "Baccarat", background: .blue)
+            CustomButtonView(name: "Roulette", background: .red)
+            CustomButtonView(name: "Blackjack", background: .green)
+        }
+        .padding()
 }
