@@ -9,19 +9,19 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Button {
+        NavigationStack {
+            VStack {
+                NavigationLink(destination: BlackjackView()) {
+                    CustomButtonView(name: "Blackjack", background: .green)
+                        
+                }
+                NavigationLink(destination: RouletteView()) {
+                    CustomButtonView(name: "Roulette", background: .blue)
+                }
                 
-            } label: {
-                CustomButtonView(name: "Blackjack", background: .green)
             }
-            .frame(width: 300, height: 50)
-            .background(.green)
-            .clipShape(RoundedRectangle(cornerRadius: 12))
             .padding()
-
         }
-        .padding()
     }
 }
 
